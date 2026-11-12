@@ -1,0 +1,36 @@
+<div id="app">
+  <canvas id="space" aria-label="Interactive Milky Way simulation"></canvas>
+  <header class="topbar"><div class="brand"><span class="dot"></span>MILKY WAY <b>OBSERVATORY</b></div><div id="modeReadout">DEEP SPACE · STATIC GALAXY</div></header>
+  <div class="hint" id="hint">Drag to move the selected control · Scroll to change field of view</div>
+  <aside class="panel" id="panel">
+    <button class="panel-head" id="collapse" type="button"><span><i></i> GALAXY CONTROLS</span><span class="chevron">⌄</span></button>
+    <div class="panel-body">
+      <div class="section first">VIEWPOINT</div>
+      <div class="radios" id="viewpoint">
+        <label><input type="radio" name="view" value="external" checked><span>Deep space / external</span></label>
+        <label><input type="radio" name="view" value="center"><span>Central star</span></label>
+        <label><input type="radio" name="view" value="earth"><span>Earth-like location</span></label>
+        <label><input type="radio" name="view" value="inner"><span>Inner-disk star</span></label>
+        <label><input type="radio" name="view" value="mid"><span>Mid-disk star</span></label>
+        <label><input type="radio" name="view" value="edge"><span>Outer-rim star</span></label>
+      </div>
+      <div class="section">DRAG CONTROL</div>
+      <div class="radios compact" id="dragControl">
+        <label><input type="radio" name="drag" value="view" checked><span>My viewpoint</span></label>
+        <label><input type="radio" name="drag" value="galaxy"><span>Galaxy orientation</span></label>
+      </div>
+      <div class="section">GALAXY</div>
+      <label>STAR DENSITY <output id="densityOut"></output><input id="density" type="range" min="1200" max="15000" step="200" value="7200"></label>
+      <label>ARM COUNT <output id="armsOut"></output><input id="arms" type="range" min="2" max="6" step="1" value="4"></label>
+      <label>DISK THICKNESS <output id="thicknessOut"></output><input id="thickness" type="range" min="0" max="1" step=".01" value=".38"></label>
+      <label>SKY DRIFT SPEED <output id="speedOut"></output><input id="speed" type="range" min="0" max="2" step=".01" value=".42"></label>
+      <button class="motion active" id="motion" type="button">MOTION: RUNNING</button>
+      <div class="section">STARS</div>
+      <label>STAR SIZE <output id="sizeOut"></output><input id="size" type="range" min=".4" max="2.5" step=".1" value="1"></label>
+      <label>STAR SHAPE <select id="shape"><option value="round">Soft round</option><option value="cross">Cross flare</option><option value="pixel">Pixel point</option></select></label>
+      <button class="reset" id="reset" type="button">RESET LOOK DIRECTION</button>
+    </div>
+  </aside>
+  <div class="crosshair"></div><footer><span>SIMULATION TIME <b id="time">00:00:00</b></span><span id="stats">7,200 STARS</span></footer>
+</div>
+<script type="module" src="/src/main.js"></script>

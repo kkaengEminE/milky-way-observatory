@@ -1,0 +1,6 @@
+{
+  "name": "milky-way-observatory",
+  "private": true,
+  "scripts": { "start": "vite" },
+  "devDependencies": { "vite": "latest" }
+}
